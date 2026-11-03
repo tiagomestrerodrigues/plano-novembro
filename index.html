@@ -433,7 +433,7 @@ function tops(list,rand,cx,cy,rad){let s='';list.forEach(([col,n,shape])=>{for(l
   else s+=`<circle cx="${x}" cy="${y}" r="${4.5+rand()*2.5}" fill="${col}"/><circle cx="${x-1.5}" cy="${y-1.5}" r="1.6" fill="#fff" opacity=".45"/>`;}});return s;}
 const PHOTOS=new Set(Object.keys(R));
 function art(id){
-  if(PHOTOS.has(id))return `<img src="img/${id}.jpg" alt="${R[id].nome}" loading="lazy" onerror="this.replaceWith(document.createRange().createContextualFragment(artSvg('${id}')))">`;
+  if(PHOTOS.has(id))return `<img src="${id}.jpg" alt="${R[id].nome}" loading="lazy" onerror="this.replaceWith(document.createRange().createContextualFragment(artSvg('${id}')))">`;
   return artSvg(id);
 }
 function artSvg(id){
